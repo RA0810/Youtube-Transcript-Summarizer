@@ -1,5 +1,3 @@
-# README.md
-
 # YouTube Transcript Summarizer
 
 This project is a YouTube Transcript Summarizer that allows users to input a YouTube video URL and receive a concise summary of the video's content. The application utilizes natural language processing techniques to transcribe and summarize the video transcript into 1-2 paragraphs, each consisting of 3-4 lines.
@@ -64,3 +62,6 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 ## License
 
 This project is licensed under the MIT License.
+=======
+# Youtube-Transcript-Summarizer
+>>>>>>> 64242b3ea66bf89bf5f9fd9b05c81a0f65918270
