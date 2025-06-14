@@ -1,12 +1,16 @@
-# YouTube Transcript Summarizer
+# YouTube Video Summarizer
 
-This project is a YouTube Transcript Summarizer that allows users to input a YouTube video URL and receive a concise summary of the video's content. The application utilizes natural language processing techniques to transcribe and summarize the video transcript into 1-2 paragraphs, each consisting of 3-4 lines.
+This project is a powerful YouTube Video Summarizer that can process any YouTube video and provide a concise summary of its content. The application uses advanced AI techniques to transcribe and summarize videos, whether they have captions or not. The summary is presented in 1-2 well-structured paragraphs for easy reading.
 
 ## Features
 
-- Fetches video transcripts from YouTube.
-- Summarizes transcripts into concise summaries.
-- User-friendly web interface for inputting YouTube URLs.
+- Works with ANY YouTube video, with or without captions
+- Multiple transcription methods:
+  - Native YouTube captions (fastest)
+  - Auto-translated captions from other languages
+  - AI-powered audio transcription for videos without captions
+- Smart summarization using state-of-the-art language models
+- Easy-to-use command-line interface
 
 ## Project Structure
 
@@ -29,6 +33,14 @@ youtube-summarizer
     └── test_summarizer.py  # Unit tests for Summarizer
 ```
 
+## Prerequisites
+
+1. Python 3.6 or higher
+2. FFmpeg (required for audio processing)
+   - Windows: Install using [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/): `winget install -e --id Gyan.FFmpeg`
+   - Mac: Install using Homebrew: `brew install ffmpeg`
+   - Linux: Install using package manager: `sudo apt install ffmpeg` (Ubuntu) or equivalent
+
 ## Installation
 
 1. Clone the repository:
@@ -42,8 +54,6 @@ youtube-summarizer
    pip install -r requirements.txt
    ```
 
-3. Set up environment variables in the `.env` file as needed.
-
 ## Usage
 
 1. Run the application:
@@ -51,9 +61,20 @@ youtube-summarizer
    python src/main.py
    ```
 
-2. Open your web browser and navigate to `http://localhost:5000`.
+2. Enter a YouTube video URL when prompted. The application supports various URL formats:
+   ```
+   https://www.youtube.com/watch?v=VIDEO_ID
+   https://youtu.be/VIDEO_ID
+   ```
 
-3. Enter the YouTube video URL and submit to receive the summary.
+3. Wait while the application:
+   - Attempts to fetch YouTube captions
+   - If no captions are available, downloads and transcribes the audio
+   - Generates a concise summary
+
+4. Read the generated summary, which will be displayed in the console.
+
+Note: The first time you process a video without captions, the application will download the Whisper model (about 150MB). This is a one-time process.
 
 ## Contributing
 
